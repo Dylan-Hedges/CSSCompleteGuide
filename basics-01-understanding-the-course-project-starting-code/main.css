@@ -1,0 +1,60 @@
+/*Universal selector - selects every element in our code (note - this selects evey element, it does not use inheritance) */
+*{
+  /*When setting the width & height of an element tells the browser to include padding & margin in the calculation - browser default is box-sizing: content-box; which does not include padding & margin when calculating width & heigh of an element*/
+  box-sizing: border-box;
+}
+
+/*Applies styling to the <body> of our code (uses inheritance - elements inherit style) - font-family should be applied to the <body> not using the universial selector * */
+body{
+  font-family:'Montserrat', sans-serif;
+  margin: 0;
+
+}
+
+#product-overview{
+  background:#ff1b68;
+  width: 100%;
+  height: 528px;
+  padding: 10px;
+}
+
+.section-title{
+  color:#2ddf5c;
+}
+
+/*Combinator*/
+#product-overview h1{
+  color: white;
+  font-family: 'Anton', sans-serif;
+}
+
+.main-header{
+  width: 100%;
+  background: #2ddf5c;
+  padding: 8px 16px;
+
+}
+
+/*Selects all <div> child elements of .main-header class*/
+.main-header > div{
+  display: inline-block;
+}
+
+.main-nav{
+  display: inline-block;
+  text-align: right;
+  /*To be replaced - calculates header with minus padding of header minus extra pixels due to characters being added as a result of the behaviour when uing display: inline-block; (counts a gap in HTML code a new character)*/
+  width: calc(100% - 54px);
+}
+
+.main-nav__items{
+  margin: 0;
+  padding: 0;
+  /*Removes bullets & styling for <li>*/
+  list-style: none;
+}
+
+.main-nav__item{
+  /*Applies behaviours of inline & block level elements - elements sit on one line like inline elements but you can also set margin/padding like block level elements*/
+  display: inline-block;
+}
