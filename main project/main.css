@@ -68,6 +68,20 @@ body{
 .plan__feature{
   margin: 8px 0;
 }
+.plan--highlighted{
+  background: #19b84c;
+  color: white;
+  /*Adds a black transparent shadow around the RECCOMMENDED box - uses the rgba() color function*/
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.plan__annotation{
+  background: white;
+  color: #19b84c;
+  padding: 8px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 4px 4px 4px 4px;
+}
 
 .button{
     background: #0e4f1f;
@@ -93,19 +107,47 @@ body{
   outline: none;
 }
 
-.plan--highlighted{
-  background: #19b84c;
-  color: white;
-  /*Adds a black transparent shadow around the RECCOMMENDED box - uses the rgba() color function*/
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+#key-features{
+  background: #ff1b68;
+  margin-top: 80px;
+  padding: 16px;
 }
 
-.plan__annotation{
-  background: white;
-  color: #19b84c;
-  padding: 8px;
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
-  border-radius: 4px 4px 4px 4px;
+#key-features .section-title{
+  color: white;
+  margin: 32px;
+}
+
+.key-feature__list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.key-feature{
+  display: inline-block;
+  width: 30%;
+  /*Aligns all the text to the top so that when there is a line break all the text is still aligned*/
+  vertical-align: top;
+}
+
+.key-feature__image{
+  background: #ffcede;
+  width: 128px;
+  height: 128px;
+  border: 2px solid #424242;
+  /*Creates a circle*/
+  border-radius: 50%;
+  /*Centres the circle horizontally - adds equal margins to the left and right to center the circle*/
+  margin: auto;
+}
+
+.key-feature__description{
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  font-size: 20px;
 }
 
 .main-header{
@@ -174,4 +216,32 @@ body{
   color: #ff1b68;
   background: white;
   border: none;
+}
+
+.main-footer{
+  background: black;
+  padding: 32px;
+  margin-top: 48px;
+}
+
+.main-footer__links{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.main-footer__link{
+  display: inline-block;
+  margin: 0 16px;
+}
+
+.main-footer__link a{
+  color: white;
+  text-decoration: none;
+}
+
+.main-footer__link a:hover,
+.main-footer__link a:active{
+  color: #ccc;
 }
