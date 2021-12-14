@@ -1,0 +1,132 @@
+/*Universal selector - selects every element in our code (note - this selects evey element, it does not use inheritance) */
+*{
+  /*When setting the width & height of an element tells the browser to include padding & margin in the calculation - browser default is box-sizing: content-box; which does not include padding & margin when calculating width & heigh of an element*/
+  box-sizing: border-box;
+}
+
+/*Applies styling to the <body> of our code (uses inheritance - elements inherit style) - font-family should be applied to the <body> not using the universial selector * */
+body{
+  font-family:'Montserrat', sans-serif;
+  margin: 0;
+
+}
+
+.main-header{
+  width: 100%;
+  background: #2ddf5c;
+  padding: 8px 16px;
+}
+
+/*Selects all <div> child elements of .main-header class*/
+.main-header > div{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.main-header__brand{
+  color: #0e4f1f;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.main-nav{
+  display: inline-block;
+  text-align: right;
+  /*To be replaced - calculates header with minus padding of header minus extra pixels due to characters being added as a result of the behaviour when uing display: inline-block; (counts a gap in HTML code a new character)*/
+  width: calc(100% - 74px);
+  vertical-align: middle;
+}
+
+.main-nav__items{
+  margin: 0;
+  padding: 0;
+  /*Removes bullets & styling for <li>*/
+  list-style: none;
+}
+
+.main-nav__item{
+  /*Applies behaviours of inline & block level elements - elements sit on one line like inline elements but you can also set margin/padding like block level elements*/
+  display: inline-block;
+  margin: 0 16px;
+}
+
+.main-nav__item a{
+  text-decoration: none;
+  color: #0e4f1f;
+  font-weight: bold;
+  padding: 3px 0;
+}
+
+/*pseudo-class styles the state of an element (e.g. :hover()) or selects something specific (e.g. nth-child( )) */
+.main-nav__item a:hover,
+.main-nav__item a:active{
+ color: white;
+ border-bottom: 5px solid white;
+}
+
+.main-nav__item--cta a{
+  color: white;
+  background: #ff1b68;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.main-nav__item--cta a:hover,
+.main-nav__item--cta a:active{
+  color: #ff1b68;
+  background: white;
+  border: none;
+}
+
+.main-footer{
+  background: black;
+  padding: 32px;
+  margin-top: 48px;
+}
+
+.main-footer__links{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.main-footer__link{
+  display: inline-block;
+  margin: 0 16px;
+}
+
+.main-footer__link a{
+  color: white;
+  text-decoration: none;
+}
+
+.main-footer__link a:hover,
+.main-footer__link a:active{
+  color: #ccc;
+}
+
+.button{
+    background: #0e4f1f;
+    color: white;
+    /*Prioritises/overrides the inherit font family over the browser default*/
+    font: inherit;
+    border: 1.5px solid #0e4f1f;
+    padding: 8px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/*Applies button styling on state :hover and :active (when mouse pressed down)*/
+.button:hover,
+.button:active{
+  background: white;
+  color: #0e4f1f;
+}
+
+.button:focus{
+  /*Removes the outline when a user focuses on a button (i.e. when button is in focus state)*/
+  outline: none;
+}

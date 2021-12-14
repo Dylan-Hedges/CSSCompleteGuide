@@ -1,0 +1,73 @@
+main{
+  padding-top: 32px;
+}
+
+.package{
+  width: 80%;
+  margin: 16px 0;
+  border: 4px solid #0e4f1f;
+  /*Removes left border*/
+  border-left: none;
+}
+
+.package:hover,
+.package:active{
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  border-color: #ff5454;
+}
+
+.package a{
+  text-decoration: none;
+  /*Sets text color to the inherited/page default color*/
+  color: inherit;
+  /*Set to block so that the <a> takes the full available width of the surrounding section*/
+  display: block;
+  padding: 32px;
+}
+
+.package__subtitle{
+  color: #979797;
+}
+
+.package__info{
+  padding: 16px;
+  border: 1px solid #0e4f1f;
+  font-size: 20px;
+  color: #0e4f1f;
+  background: white;
+}
+
+.clearfix{
+  /*Clears floats on left & right sides, elements that come after an element with this class will not respect previous floats*/
+  clear: both;
+}
+
+#plus{
+  background: rgba(213, 255, 220, 0.95);
+}
+
+#free{
+  background: rgba(234, 252, 237, 0.95);
+  /*Floats an element to the right of the page - takes it out of normal document flow (the order of how HTML elements are displayed on a web page before CSS styling is applied)*/
+  float: right;
+  border-left: 4px solid #0e4f1f;
+  border-right: none;
+  text-align: right;
+}
+
+#free:hover,
+#free:active{
+  border-left-color: #ff5454;
+}
+
+#premium{
+  background: rgba(14, 79, 31, 0.95);
+}
+
+#premium .package__title{
+  color: white;
+}
+
+#premium .package__subtitle{
+  color: #bbb;
+}
