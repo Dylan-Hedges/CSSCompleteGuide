@@ -20,6 +20,7 @@ body{
 
 .section-title{
   color:#2ddf5c;
+  text-align: center;
 }
 
 /*Combinator*/
@@ -28,11 +29,89 @@ body{
   font-family: 'Anton', sans-serif;
 }
 
+.plan{
+  background: #d5ffdc;
+  text-align: center;
+  padding: 16px;
+  margin: 8px;
+  display: inline-block;
+  /*Takes 30% of the width available provided by its parent (full available width in this case)*/
+  width: 30%;
+  /*Aligns content to the middle*/
+  vertical-align: middle;
+}
+
+.plan__title{
+  color: #0e4f1f;
+}
+
+.plan__price{
+  color: #858585;
+}
+
+.plan--highlighted .plan__title{
+  color: white;
+}
+
+.plan--highlighted .plan__price{
+  color: #0e4f1f;
+}
+
+.plan__features{
+  /*Removes bullet points from <li>*/
+  list-style: none;
+  /*Removes default padding & margin for <ul>*/
+  padding: 0;
+  margin: 0;
+}
+
+.plan__feature{
+  margin: 8px 0;
+}
+
+.button{
+    background: #0e4f1f;
+    color: white;
+    /*Prioritises/overrides the inherit font family over the browser default*/
+    font: inherit;
+    border: 1.5px solid #0e4f1f;
+    padding: 8px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/*Applies button styling on state :hover and :active (when mouse pressed down)*/
+.button:hover,
+.button:active{
+  background: white;
+  color: #0e4f1f;
+}
+
+.button:focus{
+  /*Removes the outline when a user focuses on a button (i.e. when button is in focus state)*/
+  outline: none;
+}
+
+.plan--highlighted{
+  background: #19b84c;
+  color: white;
+  /*Adds a black transparent shadow around the RECCOMMENDED box - uses the rgba() color function*/
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.plan__annotation{
+  background: white;
+  color: #19b84c;
+  padding: 8px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 4px 4px 4px 4px;
+}
+
 .main-header{
   width: 100%;
   background: #2ddf5c;
   padding: 8px 16px;
-
 }
 
 /*Selects all <div> child elements of .main-header class*/
