@@ -1,8 +1,24 @@
 #product-overview{
-  background: url("freedom.jpg");
+  /*Shorthand for the background image*/
+  /* background: url("freedom.jpg") left 10% bottom 20%/ cover no-repeat border-box; */
+  background-image: url("images/freedom.jpg");
+  /*Cover fills the entire container with the background image - automatically scales and/or crops the image, fills all whitespace*/
+  background-size: cover;
+  /*Sets the initial position for images - lets us see parts of images after they are cropped, 1st value sets x-axis, 2nd value sets y-axis */
+  background-position: left 10% bottom 20%;
+  /*Displays background image only once - can be set to repeat X amount of times*/
+  background-repeat: no-repeat;
+  /*Background image is positioned according to border box - could also be the padding box or content box*/
+  background-origin: border-box;
+  /*Background image extends to the edge of the border box - could also be the padding box or content box*/
+  background-clip: border-box;
   width: 100%;
   height: 528px;
   padding: 10px;
+  margin-top: 43px;
+  /*Use to see border of image*/
+  /* border: 5px dashed red; */
+  position: relative;
 }
 
 .section-title{
@@ -14,6 +30,9 @@
 #product-overview h1{
   color: white;
   font-family: 'Anton', sans-serif;
+  position: absolute;
+  bottom: 5%;
+  left: 3%;
 }
 
 .plan__list{
