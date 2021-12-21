@@ -1,13 +1,13 @@
 main{
-  padding-top: 32px;
+  padding-top: 2rem;
 }
 
 .background{
   background: url("../images/plans-background.jpg") center/cover;
   /*Makes images more gray - 100% makes image completely grey*/
   filter: grayscale(40%);
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   /*Fixes the position of the background image - takes it out of the regular document flow, required for z-index to work*/
   position: fixed;
   /*Sets the background image to be displayed behind all other elements - > 0 will put it above elements, < 0 will put it below elements (default z-index is auto or 0)*/
@@ -16,7 +16,7 @@ main{
 
 .package{
   width: 80%;
-  margin: 16px 0;
+  margin: 1rem 0;
   border: 4px solid #0e4f1f;
   /*Removes left border*/
   border-left: none;
@@ -36,7 +36,7 @@ main{
   color: inherit;
   /*Set to block so that the <a> takes the full available width of the surrounding section*/
   display: block;
-  padding: 32px;
+  padding: 2rem;
 }
 
 .package__badge{
@@ -44,11 +44,11 @@ main{
   position: absolute;
   top: 0;
   right: 0;
-  margin: 20px;
-  font-size: 12px;
+  margin: 1.2rem;
+  font-size: 0.8rem;
   color: white;
   background: #ff5454;
-  padding: 8px;
+  padding: 0.5rem;
 }
 
 .package__subtitle{
@@ -56,9 +56,9 @@ main{
 }
 
 .package__info{
-  padding: 16px;
+  padding: 1rem;
   border: 1px solid #0e4f1f;
-  font-size: 20px;
+  font-size: 1.2rem;
   color: #0e4f1f;
   background: white;
 }

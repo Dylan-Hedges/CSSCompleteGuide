@@ -1,6 +1,6 @@
 #product-overview{
   /*Shorthand for the background image - applies a transparent colour over the background image, #ff1b68 is a fallback colour if the image cant be loaded*/
-  background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent), url("images/freedom.jpg") left 10% bottom 20%/ cover no-repeat border-box, #ff1b68;
+  background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent), url("images/freedom.jpg") left 10% bottom 70%/ cover no-repeat border-box, #ff1b68;
   /* background-image: url("images/freedom.jpg"); */
   /*Cover fills the entire container with the background image - automatically scales and/or crops the image, fills all whitespace*/
   /* background-size: cover; */
@@ -12,10 +12,11 @@
   /* background-origin: border-box; */
   /*Background image extends to the edge of the border box - could also be the padding box or content box*/
   /* background-clip: border-box; */
-  width: 100%;
-  height: 528px;
-  padding: 10px;
-  margin-top: 43px;
+  /*Sets the width of the background image to be 100% of the width of the viewport*/
+  width: 100vw;
+  /*Sets the height of the background image to be 33% of the height of the viewport*/
+  height: 33vh;
+  margin-top: 2.75rem;
   /*Use to see border of image*/
   /* border: 5px dashed red; */
   position: relative;
@@ -31,6 +32,7 @@
   color: white;
   font-family: 'Anton', sans-serif;
   position: absolute;
+  /*Containing element is #product-overview - this is because when using % the containing element is the closest available ancestor that has position: relative; absolute; fixed; or sticky; (i.e. does not have the default of position: static;)  */
   bottom: 5%;
   left: 3%;
 }
@@ -46,13 +48,28 @@
 .plan{
   background: #d5ffdc;
   text-align: center;
-  padding: 16px;
-  margin: 8px;
+  padding: 1rem;
+  margin: 0.5rem;
   display: inline-block;
   /*Takes 30% of the width available provided by its parent (full available width in this case)*/
   width: 30%;
   /*Aligns content to the middle*/
   vertical-align: middle;
+}
+
+.plan--highlighted{
+  background: #19b84c;
+  color: white;
+  /*Adds a black transparent shadow around the RECCOMMENDED box - uses the rgba() color function*/
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.plan__annotation{
+  background: white;
+  color: #19b84c;
+  padding: 0.5rem;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 4px 4px 4px 4px;
 }
 
 .plan__title{
@@ -80,32 +97,18 @@
 }
 
 .plan__feature{
-  margin: 8px 0;
-}
-.plan--highlighted{
-  background: #19b84c;
-  color: white;
-  /*Adds a black transparent shadow around the RECCOMMENDED box - uses the rgba() color function*/
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
-}
-
-.plan__annotation{
-  background: white;
-  color: #19b84c;
-  padding: 8px;
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
-  border-radius: 4px 4px 4px 4px;
+  margin: 0.5rem 0;
 }
 
 #key-features{
   background: #ff1b68;
-  margin-top: 80px;
-  padding: 16px;
+  margin-top: 5rem;
+  padding: 1rem;
 }
 
 #key-features .section-title{
   color: white;
-  margin: 32px;
+  margin: 2rem;
 }
 
 .key-feature__list{
@@ -131,12 +134,12 @@
   border-radius: 50%;
   /*Centres the circle horizontally - adds equal margins to the left and right to center the circle*/
   margin: auto;
-  padding: 29px;
+  padding: 1.5rem;
 }
 
 .key-feature__description{
   text-align: center;
   font-weight: bold;
   color: white;
-  font-size: 20px;
+  font-size: 1.2rem;
 }

@@ -1,6 +1,8 @@
 .testimonial {
-    font-size: 20px;
-    margin: 48px 0;
+    /*When using rem font size is calculated by taking the default font size provided by the browser (in this case it is set to Medium which is 16px) and multiplying it by x1.2 - if the user changes the font size in the browser to large, very large etc. it will multiply the new default font size by x1.2*/
+    font-size: 1.2rem;
+    /*When using rem the margin is calculated by taking the default font size provided by the browser and multiplying it by x3 - in this case font in the browser is set to Medium which is 16px, this is then multipled it by x3 to get 48px, this is then used to set the top and bottom margins to 48px, this increases if the user changes the font size*/
+    margin: 3rem 0;
   }
 
   .testimonial__list {
@@ -9,12 +11,14 @@
   }
 
   .testimonial:first-of-type {
-    margin-top: 96px;
+    margin-top: 6rem;
   }
 
   .testimonial__image-container{
-    /*See   .testimonial__info{ } for remaining % */
+    /*Width is 65% of the container element - containing element is the closest ancestor that is a block level element, in this case <div class="testimonial" id="customer-1"> - See .testimonial__info{ } for remaining % */
     width: 65%;
+    /*Limits the size of an element - in this case prevents the image getting too big*/
+    max-width: 580px;
     /*Changed element to inline-block inorder to make the image respect the width of the parent*/
     display: inline-block;
     vertical-align: middle;
@@ -31,7 +35,7 @@
 
   .testimonial__info {
     text-align: right;
-    padding: 14px;
+    padding: 0.9rem;
     display: inline-block;
     vertical-align: middle;
     /*See .testimonial__image-container{ } for remaining % */
@@ -47,13 +51,14 @@
   }
 
   .testimonial__name {
-    margin: 3px;
+    margin: 0.2rem;
     color: #ff5454;
+    font-size: 2rem;
   }
 
   .testimonial__subtitle {
     margin: 0;
-    font-size: 18px;
+    font-size: 1.1rem;
     color: #ccc;
   }
 
@@ -68,5 +73,5 @@
   }
 
   .testimonial__text {
-    margin: 3px;
+    margin: 0.2rem;
   }

@@ -11,14 +11,27 @@ body{
 
 }
 
+.backdrop{
+  position: fixed;
+  display: none;
+  /*Set position to top: 0; left: 0; to fix margin collpasing issue when applying a backdrop*/
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+}
+
 .main-header{
+  /*100% of the viewport - when position: fixed; is applied the containing element is the viewport*/
   width: 100%;
   /*Fixes the nav bar to the top of the screen - takes it out of the normal document flow */
   position: fixed;
   top: 0;
   left: 0;
   background: #2ddf5c;
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
   z-index: 1;
 }
 
@@ -32,8 +45,8 @@ body{
   color: #0e4f1f;
   text-decoration: none;
   font-weight: bold;
-  font-size: 22px;
-  height: 22px;
+  font-size: 1.5rem;
+  height: 1.5rem;
   /*Changed to inline-block so that <img> in nav bar will be set to height: 100%; of its parent/container element - does not do this with inline elmenets*/
   display: inline-block;
 }
@@ -61,14 +74,14 @@ body{
 .main-nav__item{
   /*Applies behaviours of inline & block level elements - elements sit on one line like inline elements but you can also set margin/padding like block level elements*/
   display: inline-block;
-  margin: 0 16px;
+  margin: 0 1rem;
 }
 
 .main-nav__item a{
   text-decoration: none;
   color: #0e4f1f;
   font-weight: bold;
-  padding: 3px 0;
+  padding: 0.2rem 0;
 }
 
 /*pseudo-class styles the state of an element (e.g. :hover()) or selects something specific (e.g. nth-child( )) */
@@ -81,7 +94,7 @@ body{
 .main-nav__item--cta a{
   color: white;
   background: #ff1b68;
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
   border-radius: 8px;
 }
 
@@ -94,8 +107,8 @@ body{
 
 .main-footer{
   background: black;
-  padding: 32px;
-  margin-top: 48px;
+  padding: 2rem;
+  margin-top: 3rem;
 }
 
 .main-footer__links{
@@ -107,7 +120,7 @@ body{
 
 .main-footer__link{
   display: inline-block;
-  margin: 0 16px;
+  margin: 0 1rem;
 }
 
 .main-footer__link a{
@@ -126,7 +139,7 @@ body{
     /*Prioritises/overrides the inherit font family over the browser default*/
     font: inherit;
     border: 1.5px solid #0e4f1f;
-    padding: 8px;
+    padding: 0.5rem;
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
