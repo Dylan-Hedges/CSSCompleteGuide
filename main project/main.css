@@ -1,6 +1,6 @@
 #product-overview{
   /*Shorthand for the background image - applies a transparent colour over the background image, #ff1b68 is a fallback colour if the image cant be loaded*/
-  background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent), url("images/freedom.jpg") left 10% bottom 70%/ cover no-repeat border-box, #ff1b68;
+  background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent), url("images/freedom.jpg") center/ cover no-repeat border-box, #ff1b68;
   /* background-image: url("images/freedom.jpg"); */
   /*Cover fills the entire container with the background image - automatically scales and/or crops the image, fills all whitespace*/
   /* background-size: cover; */
@@ -22,11 +22,6 @@
   position: relative;
 }
 
-.section-title{
-  color:#2ddf5c;
-  text-align: center;
-}
-
 /*Combinator*/
 #product-overview h1{
   color: white;
@@ -35,13 +30,22 @@
   /*Containing element is #product-overview - this is because when using % the containing element is the closest available ancestor that has position: relative; absolute; fixed; or sticky; (i.e. does not have the default of position: static;)  */
   bottom: 5%;
   left: 3%;
+  font-size: 1.6rem;
 }
 
-.plan__list{
-  width: 80%;
-  /*Horizontally centers the <div> containing the 3 plans*/
-  margin: auto;
-  /*Horizontally centers the 3 plans inside the <div>*/
+@media(min-width: 40rem) and (min-height: 50rem){
+  #product-overview{
+    height: 40vh;
+    background-position: 50% 25%;
+  }
+
+  #product-overview h1{
+    font-size: 3rem;
+  }
+}
+
+.section-title{
+  color:#2ddf5c;
   text-align: center;
 }
 
@@ -49,19 +53,16 @@
   background: #d5ffdc;
   text-align: center;
   padding: 1rem;
-  margin: 0.5rem;
-  display: inline-block;
-  /*Takes 30% of the width available provided by its parent (full available width in this case)*/
-  width: 30%;
-  /*Aligns content to the middle*/
-  vertical-align: middle;
+  margin: 0.5rem 0;
+  /*Takes the amount of the width available provided by its parent (full available width in this case)*/
+  width: 100%;
 }
 
 .plan--highlighted{
   background: #19b84c;
   color: white;
   /*Adds a black transparent shadow around the RECCOMMENDED box - uses the rgba() color function*/
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+  /* box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5); */
 }
 
 .plan__annotation{
@@ -100,6 +101,34 @@
   margin: 0.5rem 0;
 }
 
+@media(min-width: 40rem){
+  /*Container for plans*/
+  .plan__list{
+    /*Plan container that full available screen width*/
+    width: 100%;
+    /*Horizontally centers the 3 plans inside the <div>*/
+    text-align: center;
+  }
+
+  .plan{
+    /*Makes the plan boxes sit in a line - like an inline element, default is block so each plan would take up a new line, not what we want for desktop version*/
+    display: inline-block;
+    /*Each plan takes 30% of the width available provided by its parent (full available width in this case)*/
+    width: 30%;
+    /*Aligns content to the middle*/
+    vertical-align: middle;
+    /*Limits the minimum size of the plan boxes - Prevents text in plan boxes overlapping with background, 13rem = 208px (16px is medium font size in browser) */
+    min-width: 13rem;
+    /*Limits the maximum size of the plan boxes - Prevents boxes streching too much, 25rem = 400px (16px is medium font size in browser) */
+    max-width: 25rem;
+  }
+
+  .plan--highlighted{
+    /*Adds a black transparent shadow around the RECCOMMENDED box - uses the rgba() color function*/
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+  }
+}
+
 #key-features{
   background: #ff1b68;
   margin-top: 5rem;
@@ -116,13 +145,6 @@
   margin: 0;
   padding: 0;
   text-align: center;
-}
-
-.key-feature{
-  display: inline-block;
-  width: 30%;
-  /*Aligns all the text to the top so that when there is a line break all the text is still aligned*/
-  vertical-align: top;
 }
 
 .key-feature__image{
@@ -142,6 +164,16 @@
   font-weight: bold;
   color: white;
   font-size: 1.2rem;
+}
+
+@media(min-width: 40rem){
+  .key-feature{
+    display: inline-block;
+    width: 30%;
+    max-width: 25rem;
+    /*Aligns all the text to the top so that when there is a line break all the text is still aligned*/
+    vertical-align: top;
+  }
 }
 
 .modal {

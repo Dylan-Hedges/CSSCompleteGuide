@@ -68,23 +68,18 @@ body{
   text-decoration: none;
   font-weight: bold;
   font-size: 1.5rem;
-  height: 1.5rem;
   /*Changed to inline-block so that <img> in nav bar will be set to height: 100%; of its parent/container element - does not do this with inline elmenets*/
   display: inline-block;
   vertical-align: middle;
 }
 
 .main-header__brand img{
-  /*Makes images in nav bar height 100% of parent/container element*/
-  height: 100%;
+  /*Makes images in nav bar height 2.5rem (40px) - dictates height of nav bar */
+  height: 2.5rem;
 }
 
 .main-nav{
-  display: inline-block;
-  text-align: right;
-  /*To be replaced - calculates header with minus padding of header minus extra pixels due to characters being added as a result of the behaviour when uing display: inline-block; (counts a gap in HTML code a new character)*/
-  width: calc(100% - 122px);
-  vertical-align: middle;
+  display: none;
 }
 
 .main-nav__items{
@@ -132,6 +127,19 @@ body{
   border: none;
 }
 
+@media(min-width: 40rem){
+  .toggle-button{
+    display: none;
+  }
+  .main-nav{
+    display: inline-block;
+    text-align: right;
+    /*To be replaced - calculates header with minus padding of header minus extra pixels due to characters being added as a result of the behaviour when uing display: inline-block; (counts a gap in HTML code a new character)*/
+    width: calc(100% - 44px);
+    vertical-align: middle;
+  }
+}
+
 .main-footer{
   background: black;
   padding: 2rem;
@@ -146,8 +154,8 @@ body{
 }
 
 .main-footer__link{
-  display: inline-block;
-  margin: 0 1rem;
+  display: block;
+  margin: 1rem 0;
 }
 
 .main-footer__link a{
@@ -214,4 +222,11 @@ body{
 
 .open{
   display: block !important;
+}
+
+@media (min-width: 40rem){
+  .main-footer__link{
+    display: inline-block;
+    margin: 0 1rem;
+  }
 }
