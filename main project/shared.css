@@ -1,3 +1,6 @@
+/*Imports the Google Fonts used in website - all pages that link to the shared.css file will be able to use these fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;700&family=Roboto:wght@100;400;900&display=swap');
+
 /*Universal selector - selects every element in our code (note - this selects evey element, it does not use inheritance) */
 *{
   /*When setting the width & height of an element tells the browser to include padding & margin in the calculation - browser default is box-sizing: content-box; which does not include padding & margin when calculating width & heigh of an element*/

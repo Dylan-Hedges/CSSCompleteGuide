@@ -1,3 +1,18 @@
+/*Imports and adds the font AnonymousPro*/
+@@font-face {
+  /*Assigns the name "AnonymousPro" */
+  font-family: "AnonymousPro";
+  /*Imports the downloaded font file - format( ) tells browser type is ttf or truetype*/
+  src: url("AnonymousPro-Regular.ttf") format("truetype");
+}
+
+/*Imports and adds the font AnonymousPro - bold*/
+@@font-face {
+  font-family: "AnonymousPro";
+  src: url("AnonymousPro-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
 main{
   /*Provides distance between nav bar and packages boxes - When using rem the margin is calculated by taking the default font size provided by the browser and multiplying it by x3 - in this case font in the browser is set to Medium which is 16px, this is then multipled it by x3 to get 48px, this is then used to set the top and bottom margins to 48px, this increases if the user changes the font size*/
   padding-top: 2rem;
@@ -59,9 +74,9 @@ main{
 .package__info{
   padding: 1rem;
   border: 1px solid #0e4f1f;
-  font-size: 1.2rem;
   color: #0e4f1f;
   background: white;
+  font-size: 1.2rem;
 }
 
 .clearfix{
