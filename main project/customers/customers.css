@@ -1,27 +1,23 @@
+main {
+    /*Pushes the content inside of the <main> element down so that it does not touch the nav bar*/
+    padding-top: 2.5rem;
+}
+
 .testimonial {
     /*When using rem font size is calculated by taking the default font size provided by the browser (in this case it is set to Medium which is 16px) and multiplying it by x1.2 - if the user changes the font size in the browser to large, very large etc. it will multiply the new default font size by x1.2*/
     font-size: 1.2rem;
-    /*When using rem the margin is calculated by taking the default font size provided by the browser and multiplying it by x3 - in this case font in the browser is set to Medium which is 16px, this is then multipled it by x3 to get 48px, this is then used to set the top and bottom margins to 48px, this increases if the user changes the font size*/
-    margin: 3rem 0;
   }
 
-  .testimonial__list {
+  /* .testimonial__list {
     width: 80%;
     margin: auto;
-  }
-
-  .testimonial:first-of-type {
-    margin-top: 6rem;
-  }
+  } */
 
   .testimonial__image-container{
-    /*Width is 65% of the container element - containing element is the closest ancestor that is a block level element, in this case <div class="testimonial" id="customer-1"> - See .testimonial__info{ } for remaining % */
-    width: 65%;
+    /*Width is a % of the container element - containing element is the closest ancestor that is a block level element, in this case <div class="testimonial" id="customer-1"> - See .testimonial__info{ } for remaining % */
+    width: 100%;
     /*Limits the size of an element - in this case prevents the image getting too big*/
-    max-width: 580px;
-    /*Changed element to inline-block inorder to make the image respect the width of the parent*/
-    display: inline-block;
-    vertical-align: middle;
+    max-width: 40rem;
     box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3);
   }
 
@@ -32,14 +28,9 @@
     vertical-align: top;
   }
 
-
   .testimonial__info {
     text-align: right;
     padding: 0.9rem;
-    display: inline-block;
-    vertical-align: middle;
-    /*See .testimonial__image-container{ } for remaining % */
-    width: 30%;
   }
 
   #customer-2.testimonial {
@@ -74,4 +65,28 @@
 
   .testimonial__text {
     margin: 0.2rem;
+  }
+
+  @media(min-width: 40rem){
+    .testimonial {
+        /*When using rem the margin is calculated by taking the default font size provided by the browser and multiplying it by x3 - in this case font in the browser is set to Medium which is 16px, this is then multipled it by x3 to get 48px, this is then used to set the top and bottom margins to 48px, this increases if the user changes the font size*/
+        margin: 3rem auto;
+        /*Sets a size limit so that text does not get pulled too far apart on large screens*/
+        max-width: 1500px;
+    }
+
+    .testimonial__image-container{
+      /*Changed element to inline-block inorder to make the image respect the width of the parent*/
+      display: inline-block;
+      vertical-align: middle;
+      /*Set at 66% so that it allows text to go to the left and right of the images just after transitioning from mobile to a  larger format*/
+      width: 66%;
+    }
+
+    .testimonial__info {
+      display: inline-block;
+      vertical-align: middle;
+      /*See .testimonial__image-container{ } for remaining % */
+      width: 30%;
+    }
   }

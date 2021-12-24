@@ -1,4 +1,5 @@
 main{
+  /*Provides distance between nav bar and packages boxes - When using rem the margin is calculated by taking the default font size provided by the browser and multiplying it by x3 - in this case font in the browser is set to Medium which is 16px, this is then multipled it by x3 to get 48px, this is then used to set the top and bottom margins to 48px, this increases if the user changes the font size*/
   padding-top: 2rem;
 }
 
@@ -96,4 +97,28 @@ main{
 
 #premium .package__subtitle{
   color: #bbb;
+}
+
+@media(min-width: 40rem){
+  main {
+      /*Sets a size limit so that text does not get pulled too far apart on large screens*/
+      max-width: 1500px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+}
+
+@media(min-width: 1500px){
+  .package{
+    border-left: 4px solid #0e4f1f;
+  }
+
+  #free{
+    border-right: 4px solid #0e4f1f;
+  }
+
+  #free:hover,
+  #free:active{
+    border-right-color: #ff5454;
+  }
 }

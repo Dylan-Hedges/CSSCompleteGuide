@@ -16,10 +16,9 @@
   width: 100vw;
   /*Sets the height of the background image to be 33% of the height of the viewport*/
   height: 33vh;
-  margin-top: 2.75rem;
-  /*Use to see border of image*/
-  /* border: 5px dashed red; */
   position: relative;
+  /*Use to see border of an image*/
+  /* border: 5px dashed red; */
 }
 
 /*Combinator*/
@@ -33,7 +32,7 @@
   font-size: 1.6rem;
 }
 
-@media(min-width: 40rem) and (min-height: 50rem){
+@media(min-width: 40rem) and (min-height: 40rem){
   #product-overview{
     height: 40vh;
     background-position: 50% 25%;
