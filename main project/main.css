@@ -105,26 +105,39 @@
   .plan__list{
     /*Plan container that full available screen width*/
     width: 100%;
-    /*Horizontally centers the 3 plans inside the <div>*/
-    text-align: center;
+    /*Makes element a flex container*/
+    display: flex;
+    /*Aligns items (plans) along the main axis (left to right, horizontally)*/
+    justify-content: center;
+    /*Aligns items (plans) along the cross axis (top to bottom, vertically)*/
+    align-items: center;
+
   }
 
   .plan{
-    /*Makes the plan boxes sit in a line - like an inline element, default is block so each plan would take up a new line, not what we want for desktop version*/
-    display: inline-block;
     /*Each plan takes 30% of the width available provided by its parent (full available width in this case)*/
     width: 30%;
-    /*Aligns content to the middle*/
-    vertical-align: middle;
     /*Limits the minimum size of the plan boxes - Prevents text in plan boxes overlapping with background, 13rem = 208px (16px is medium font size in browser) */
     min-width: 13rem;
     /*Limits the maximum size of the plan boxes - Prevents boxes streching too much, 25rem = 400px (16px is medium font size in browser) */
     max-width: 25rem;
+    /*Makes element a flex container*/
+    display: flex;
+    /*Items in the plan (text, button etc.) are displayed vertically - main axis now goes from top to bottom*/
+    flex-direction: column;
+    /*Items are evenly distributed within the alignment container along the main axis. The spacing between each pair of adjacent items is the same*/
+    justify-content: space-between;
+    /*Sets the height for FREE and PREMIUM plans*/
+    height: 28rem;
   }
 
   .plan--highlighted{
     /*Adds a black transparent shadow around the RECCOMMENDED box - uses the rgba() color function*/
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+    /*Sets PLUS plan to be higher than the other plans*/
+    height: 30rem;
+    /*Puts PLUS plan above the others*/
+    z-index: 50;
   }
 }
 
@@ -167,11 +180,15 @@
 
 @media(min-width: 40rem){
   .key-feature{
-    display: inline-block;
     width: 30%;
     max-width: 25rem;
-    /*Aligns all the text to the top so that when there is a line break all the text is still aligned*/
-    vertical-align: top;
+  }
+
+  .key-feature__list{
+    /*Makes element a flex container*/
+    display: flex;
+    /*Aligns items (plans) along the main axis (left to right, horizontally)*/
+    justify-content: center;
   }
 }
 

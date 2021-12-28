@@ -73,19 +73,20 @@ main {
         margin: 3rem auto;
         /*Sets a size limit so that text does not get pulled too far apart on large screens*/
         max-width: 1500px;
+        /*Makes element a flex container*/
+        display: flex;
+        /*Aligns items along the cross axis (top to bottom, vertically)*/
+        align-items: center;
+        /*Items are evenly distributed within the alignment container along the main axis. The spacing between each pair of adjacent items is the same.*/
+        justify-content: space-around;
     }
 
     .testimonial__image-container{
-      /*Changed element to inline-block inorder to make the image respect the width of the parent*/
-      display: inline-block;
-      vertical-align: middle;
       /*Set at 66% so that it allows text to go to the left and right of the images just after transitioning from mobile to a  larger format*/
       width: 66%;
     }
 
     .testimonial__info {
-      display: inline-block;
-      vertical-align: middle;
       /*See .testimonial__image-container{ } for remaining % */
       width: 30%;
     }
