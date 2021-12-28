@@ -1,6 +1,7 @@
 main{
   padding-top: 1rem;
 }
+
 .signup-title{
   text-align: center;
   font-size: 1.8rem;
@@ -9,6 +10,12 @@ main{
 
 .signup-form{
   padding: 1rem;
+  /*Turns the sign up form into a container element for the CSS grid - all inputs are put int seperate rows*/
+  display: grid;
+  /*Makes every row (input field & label) to a height of 2rem*/
+  grid-auto-rows: 2rem;
+  /*Adds a gap of 0.5rem to each row (spaces out input fields and labels)*/
+  grid-row-gap: 0.5rem;
 }
 
 .signup-form label{
@@ -19,7 +26,6 @@ main{
 .signup-form input,
 .signup-form select{
   display: block;
-  margin-top: 1rem;
   width: 100%;
 }
 
@@ -72,12 +78,27 @@ main{
 
 .signup-form button[type="submit"]{
   display: block;
-  margin-top: 1rem;
 }
 
 @media (min-width: 40rem){
   .signup-form{
     margin: auto;
-    width: 25rem;
+    width: 30rem;
+    /*Creates 2 columns - the 1st one is for the labels (10rem) and the 2nd one is for the inputs (takes all available width as specified in this class)*/
+    grid-template-columns: 10rem auto;
+    /*Puts a distance of 1rem between each row (each input field top and bottom)*/
+    grid-row-gap: 1rem;
+    /*Puts a distance of 0.5rem between the label and the input (left and right of input fields and labels)*/
+    grid-column-gap: 0.5rem;
+  }
+
+  .signup-form [id="title"]{
+    /*Title dropdown spans across 2 columns which pushes everything down so that it does not sit on the same line*/
+    grid-column: span 2;
+  }
+
+  .signup-form__checkbox{
+    /*Checkbox and text spans across 2 columns which pushes sign up button onto a new line - stops check and sign up being on same line*/
+    grid-column: span 2;
   }
 }

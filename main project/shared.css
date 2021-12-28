@@ -13,8 +13,8 @@ body{
   margin: 0;
   /*Turns <body> into a container element for the CSS grid*/
   display: grid;
-  /*Adds rows to the grid - 1st row = 3.5rem (header/nav bar is out of the regular document flow (due to position: fixed;) and cant be included in the grid, therefore we create a new blank row to make space for it, otherwise it will overlap content in <main>), 2nd row height = auto (this is for <main>), 3rd row = 8rem (this is for footer) */
-  grid-template-rows: 3.5rem auto 8rem;
+  /*Adds rows to the grid - 1st row = 3.5rem (header/nav bar is out of the regular document flow (due to position: fixed;) and cant be included in the grid, therefore we create a new blank row to make space for it, otherwise it will overlap content in <main>), 2nd row height = auto (this is for <main>), 3rd row = fit-content(8rem) (this is for footer, will be 8rem minimum or if needed will expand just enough to fit the content) */
+  grid-template-rows: 3.5rem auto fit-content(8rem);
   /*Assigns names to columns, rows and cells - "header" = 1st row (not used), "main" = 2nd row, "footer" = 3rd row*/
   grid-template-areas:  "header"
                         "main"
@@ -22,10 +22,6 @@ body{
 }
 
 main{
-  /*For the main element - takes viewport height - space needed for nav bar - space needed for footer*/
-  /* min-height: calc(100vh - 3.5rem - 8rem); */
-  /*Pushes the main element below the nav bar - dont want it overlapping with nav nar*/
-  margin-top: 3.5rem;
   /*Puts the content in <main> into the grid area with a name of "main" - starts and ends inside of this named area*/
   grid-area: main;
 }
